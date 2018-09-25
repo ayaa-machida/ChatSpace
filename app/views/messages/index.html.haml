@@ -1,0 +1,42 @@
+.contents
+  .left_content
+    .main_display
+      .name
+        aya
+      .icons
+        %a.chat-side__user--new-group{href: '/groups/new'}
+          %i.fa.fa-edit
+        %a.chat-side__user--edit-user{href: '/users/edit'}
+          %i.fa.fa-cog
+    .group_display
+      .group_list
+        .group_name
+          お試し
+        .message_least
+          どや
+      .group_list
+        .group_name
+          お試し2
+        .message_least
+          ほげ
+  .main_content
+    .main_header
+      .main_header_display
+        .main_group_name
+          sampleグループ
+        .main_login_name
+          MEMBER:aya
+      .edit_btn
+        edit
+    .messageslists
+      = render partial: "messages/message", locals: { message: @message }
+    .footer
+      .form
+        .format
+          type a message
+        %label.icons__icon--image
+          %input.image{type: :"file"}
+          %i.fa.fa-image
+      .send_btn
+        Send
+
