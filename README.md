@@ -7,12 +7,10 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer| |
 |body|text| |
 |image|string| |
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-|timestanmp|datetime| |
 
 ### Association
 - belongs_to :group
@@ -23,11 +21,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|index: true|
-|name|string|null: false|
-|email|string|unique: true|
-|password|string| |
-|encrypted_password|string| |
+|name|string|null: false, add_index: true|
+|email|string|null: false, unique: true|
 
 ### Association
 - has_many :groups_users
@@ -39,8 +34,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|index: true|
-|group_name|string|null: false|
+|group_name|string|null: false, unique: true|
 
 ### Association
 - has_many :groups_users
@@ -51,9 +45,8 @@
 ## groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer| |
-|user_id|integer|foreign_key: true|
-|group_id|integer|foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
