@@ -1,5 +1,9 @@
 @import "font-awesome";
-@import "./reset";
-@import "./variable";
+@import "./colors";
 @import "./mixin";
+@import "./reset";
+@import "modules/flash";
+@import "modules/user";
+@import "modules/group";
+@import "side_bar";
 @import "chatspace";

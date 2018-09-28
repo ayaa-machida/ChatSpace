@@ -1,161 +1,105 @@
-.contents {
-  .left_content{
-    float:left;
-    height: 100vh;
-    width: 300px;
-    .main_display{
-      background-color: #0a0c10;
-      color: #FFF;
-      font-size: 20px;
-      padding: 0 20px ;
-      height: 100px;
-      width: 300px;
-      .name{
-        width: 70%;
-        float: left;
-        line-height: 100px;
+.main_content{
+  height: 100vh;
+  float:left;
+  @include mixin;
+  .main_header{
+    background-color: white;
+    height: 100px;
+    .main_header_display{
+      width: 80%;
+      float:left;
+      .main_group_name{
+        font-size: 20px;
+        padding: 35px 0 15px 40px;
       }
-      .icons{
-        width: 30%;
-        float: left;
-        .chat-side__user--new-group{
-          line-height: 100px;
-          text-decoration: none;
-          float:left;
-          color: white;
-        }
-        .chat-side__user--edit-user{
-          line-height: 100px;
-          text-decoration: none;
-          float:left;
-          padding: 0 5px;
-          color: white;
-        }
+      .main_login_name{
+        font-size: 12px;
+        padding: 0 0 0 40px;
+        color: $light_gray;
       }
     }
-    .group_display{
-      background-color: #2f3e51;
-      color: #FFF;
-      height: calc(100vh - 100px);
-      width: 300px;
-      overflow-x: scroll;
-      .group_list{
-        padding: 20px 20px ;
-        .group_name{
-          font-size: 15px;
-          color: #FFF;
-          margin-bottom: 5px;
+    .edit_btn{
+      width: 7%;
+      float:right;
+      margin:28px 20px 0;
+      padding: 12.5px 0;
+      border: solid 1px $light_blue;
+      text-align: center;
+    }
+  }
+  .messageslists{
+    background-color: white;
+    height: calc(100vh - 200px);
+    overflow-x: scroll;
+    padding-top: 6px;
+    border: solid 1px #eeeeee;
+    .messagelist{
+      padding: 40px 0 0 40px ;
+      .messagelist__create{
+        height: 20px;
+        .messagelist__name{
+          height: 20px;
+          line-height: 20px;
+          font-size: 16px;
+          color: $black;
+          float: left;
         }
-        .message_least{
-          font-size: 11px;
-          color: #FFF;
+        .messagelist__post_date{
+          color: $light_gray;
+          height: 20px;
+          line-height: 20px;
+          font-size: 12px;
+          padding-left: 10px;
+          float: left;
         }
+      }
+      .messagelist__comment{
+        font-size: 14px;
+        color: $black;
+        padding-top: 10px;
       }
     }
   }
-  .main_content{
-    height: 100vh;
-    float:left;
+  .footer{
+    height: 100px;
+    background-color: #d3d3d3;
+    position: relative;
     @include mixin;
-    .main_header{
+    .form{
+      // height: 50px;
+      // line-height: 50px;
       background-color: white;
-      height: 100px;
-      .main_header_display{
-        width: 80%;
+      font-size: 16px;
+      float:left;
+      width: 70%;
+      padding: 20px 40px 20px 40px;
+      position: absolute;
+      top: 20%;
+      left: 40px;
+      .format{
+        width: 95%;
+        color: $black;
         float:left;
-        .main_group_name{
-          font-size: 20px;
-          padding: 35px 0 15px 40px;
-        }
-        .main_login_name{
-          font-size: 12px;
-          padding: 0 0 0 40px;
-          color: $lightgray;
-        }
       }
-      .edit_btn{
-        width: 7%;
-        float:right;
-        margin:28px 20px 0;
-        padding: 12.5px 0;
-        border: solid 1px $lightblue;
-        text-align: center;
-      }
-    }
-    .messageslists{
-      background-color: white;
-      height: calc(100vh - 200px);
-      overflow-x: scroll;
-      padding-top: 6px;
-      border: solid 1px #eeeeee;
-      .messagelist{
-        padding: 40px 0 0 40px ;
-        .messagelist__create{
-          height: 20px;
-          .messagelist__name{
-            height: 20px;
-            line-height: 20px;
-            font-size: 16px;
-            color: $black;
-            float: left;
-          }
-          .messagelist__post_date{
-            color: $lightgray;
-            height: 20px;
-            line-height: 20px;
-            font-size: 12px;
-            padding-left: 10px;
-            float: left;
-          }
-        }
-        .messagelist__comment{
-          font-size: 14px;
-          color: $black;
-          padding-top: 10px;
+      .icons__icon--image{
+        color: black;
+        width: 5%;
+        float:left;
+        .image{
+          display:none;
         }
       }
     }
-    .footer{
-      height: 100px;
-      background-color: #d3d3d3;
-      position: relative;
-      @include mixin;
-      .form{
-        // height: 50px;
-        // line-height: 50px;
-        background-color: white;
-        font-size: 16px;
-        float:left;
-        width: 70%;
-        padding: 20px 40px 20px 40px;
-        position: absolute;
-        top: 20%;
-        left: 40px;
-        .format{
-          width: 95%;
-          color: $black;
-          float:left;
-        }
-        .icons__icon--image{
-          color: black;
-          width: 5%;
-          float:left;
-          .image{
-            display:none;
-          }
-        }
-      }
-      .send_btn{
-        background-color: $lightblue;
-        color: white;
-        text-align: center;
-        width: 6%;
-        padding: 15px;
-        float:left;
-        position: absolute;
-        top: 25%;
-        left: 86%;
-      }
+    .send_btn{
+      background-color: $light_blue;
+      color: white;
+      text-align: center;
+      width: 6%;
+      padding: 15px;
+      float:left;
+      position: absolute;
+      top: 25%;
+      left: 86%;
     }
   }
 }
