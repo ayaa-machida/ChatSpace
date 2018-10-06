@@ -1,64 +1,11 @@
 .messagelist
   .messagelist__create
     .messagelist__name
-      aya
+      = message.user.name
     .messagelist__post_date
-      2018/9/24 17:30:09
+      = message.created_at
   .messagelist__comment
-    ほげ
-.messagelist
-  .messagelist__create
-    .messagelist__name
-      aya
-    .messagelist__post_date
-      2018/9/24 17:30:09
-  .messagelist__comment
-    ほげ
-.messagelist
-  .messagelist__create
-    .messagelist__name
-      aya
-    .messagelist__post_date
-      2018/9/24 17:30:09
-  .messagelist__comment
-    ほげ
-.messagelist
-  .messagelist__create
-    .messagelist__name
-      aya
-    .messagelist__post_date
-      2018/9/24 17:30:09
-  .messagelist__comment
-    ほげ
-.messagelist
-  .messagelist__create
-    .messagelist__name
-      aya
-    .messagelist__post_date
-      2018/9/24 17:30:09
-  .messagelist__comment
-    ほげ
-.messagelist
-  .messagelist__create
-    .messagelist__name
-      aya
-    .messagelist__post_date
-      2018/9/24 17:30:09
-  .messagelist__comment
-    ほげ
-.messagelist
-  .messagelist__create
-    .messagelist__name
-      aya
-    .messagelist__post_date
-      2018/9/24 17:30:09
-  .messagelist__comment
-    ほげ
-.messagelist
-  .messagelist__create
-    .messagelist__name
-      aya
-    .messagelist__post_date
-      2018/9/24 17:30:09
-  .messagelist__comment
-    ほげ
+    - if message.content.present?
+      %p.lower-message__content
+        = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
