@@ -24,7 +24,9 @@
       margin:28px 20px 0;
       padding: 12.5px 0;
       border: solid 1px $light_blue;
+      color:black;
       text-align: center;
+      text-decoration: none;
     }
   }
   .messageslists{
@@ -61,45 +63,49 @@
     }
   }
   .footer{
-    height: 100px;
+    height: 90px;
     background-color: #d3d3d3;
-    position: relative;
-    @include mixin;
+    padding: 0 40px;
+    // position: relative;
+    // @include mixin;
     .form{
-      // height: 50px;
-      // line-height: 50px;
-      background-color: white;
-      font-size: 16px;
-      float:left;
-      width: 70%;
-      padding: 20px 40px 20px 40px;
-      position: absolute;
-      top: 20%;
-      left: 40px;
-      .format{
-        width: 95%;
+      .form__message{
+        height: 50px;
+        width: calc(100% - 160px);
+        margin: 20px 0;
+        background-color: white;
         color: $black;
         float:left;
+        border:none;
       }
-      .icons__icon--image{
-        color: black;
-        width: 5%;
+      .form__mask{
+        height: 50px;
+        background-color: white;
+        padding-right: 20px;
+        margin: 20px 0;
         float:left;
-        .image{
+        .icon{
+          color: black;
+          width: 5%;
+          line-height: 50px;
+        }
+        .hidden{
           display:none;
         }
       }
-    }
-    .send_btn{
-      background-color: $light_blue;
-      color: white;
-      text-align: center;
-      width: 6%;
-      padding: 15px;
-      float:left;
-      position: absolute;
-      top: 25%;
-      left: 86%;
+      .form__submit{
+        background-color: $light_blue;
+        color: white;
+        text-align: center;
+        height: 50px;
+        padding: 0 30px;
+        margin: 20px 0 20px 15px;
+        float:left;
+        border: none;
+        // position: absolute;
+        // top: 25%;
+        // left: 86%;
+      }
     }
   }
 }
