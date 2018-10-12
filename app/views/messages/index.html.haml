@@ -13,7 +13,8 @@
             = user.name
       = link_to 'edit', edit_group_path(@group), class: "edit_btn"
     .messageslists
-      %input{name: "leastMessageId", type: "hidden", value: "#{@messages.last.id}", class: "leastMessageId"}
+      = hidden_field :leastMessageId , class: "leastMessageId", value: "#{@messages.last.id}"
+      / %input{name: "leastMessageId", type: "hidden", value: "#{@messages.last.id}", class: "leastMessageId"}
       = render @messages
     .footer
       .form

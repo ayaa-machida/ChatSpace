@@ -3,7 +3,7 @@
     .messagelist__name
       = message.user.name
     .messagelist__post_date
-      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
   .messagelist__comment
     - if message.content.present?
       %p.lower-message__content

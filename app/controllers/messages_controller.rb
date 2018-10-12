@@ -5,13 +5,6 @@ class MessagesController < ApplicationController
     @message = Message.new
     @messages = @group.messages.includes(:user)
     @newmessages = []
-    # if params[:leastMessage] != nil
-    #   @messages.each do |message|
-    #     if message.id > params[:leastMessage][:id].to_i
-    #       @newmessages << Message.find(message.id)
-    #     end
-    #   end
-    # end
     respond_to do |format|
       format.json {
         if params[:leastMessage][:id].to_i != @group.messages.last.id

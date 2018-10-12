@@ -30,12 +30,6 @@ $(function(){
 
   var interval = setInterval(function() {
     if (window.location.href.match(/\/groups\/\d+\/messages/)) {
-      // 画面上の最新のメッセージIDをDB上の最新のメッセージIDに更新
-      // if(leastMessageId == 0) {
-      //   leastMessageId = $(".leastMessageId").val();
-      // }
-      // var leastMessageId = $(".messagelist").last().attr("data-message-id");
-      // console.log(leastMessageId)
       $.ajax({
         type: 'GET',
         url: window.location.pathname,
