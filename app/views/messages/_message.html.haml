@@ -1,9 +1,9 @@
-.messagelist
+.messagelist{ "data-message-id": "#{message.id}"}
   .messagelist__create
     .messagelist__name
       = message.user.name
     .messagelist__post_date
-      = message.created_at
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
   .messagelist__comment
     - if message.content.present?
       %p.lower-message__content

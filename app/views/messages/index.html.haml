@@ -1,10 +1,11 @@
+=javascript_tag do
+  window.leastMessage = #{raw @messages.last.to_json}
 .contents
   = render 'shared/side_bar'
   .main_content
     .main_header
       .main_header_display
         .main_group_name
-          / - current_user.groups.each do |group|
           = @group.name
         .main_login_name
           MEMBER:
@@ -12,6 +13,8 @@
             = user.name
       = link_to 'edit', edit_group_path(@group), class: "edit_btn"
     .messageslists
+      = hidden_field :leastMessageId , class: "leastMessageId", value: "#{@messages.last.id}"
+      / %input{name: "leastMessageId", type: "hidden", value: "#{@messages.last.id}", class: "leastMessageId"}
       = render @messages
     .footer
       .form
