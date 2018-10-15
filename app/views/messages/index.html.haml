@@ -13,9 +13,9 @@
             = user.name
       = link_to 'edit', edit_group_path(@group), class: "edit_btn"
     .messageslists
-      = hidden_field :leastMessageId , class: "leastMessageId", value: "#{@messages.last.id}"
-      / %input{name: "leastMessageId", type: "hidden", value: "#{@messages.last.id}", class: "leastMessageId"}
-      = render @messages
+      - if @messages.last != nil
+        = hidden_field :leastMessageId , class: "leastMessageId", value: "#{@messages.last.id}"
+        = render @messages
     .footer
       .form
         = form_for [@group, @message] do |f|
