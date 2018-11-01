@@ -59,6 +59,10 @@
         font-size: 14px;
         color: $black;
         padding-top: 10px;
+        .lower-message__image{
+          height: 300px;
+          width: 300px;
+        }
       }
     }
   }
